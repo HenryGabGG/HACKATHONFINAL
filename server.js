@@ -23,9 +23,15 @@ mongoose.connect(process.env.MONGO_URI, {
 const homeRoutes = require('./routes/homeRoutes');
 const couponRoutes = require('./routes/couponRoutes');
 const userRoutes = require('./routes/userRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 app.use('/api/home', homeRoutes);
 app.use('/api', couponRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/payment', paymentRoutes);
+app.use('/api/orders', orderRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
