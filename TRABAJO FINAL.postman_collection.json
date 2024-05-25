@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "9c64015d-cdd7-493c-836e-ec10261d5417",
+		"name": "TRABAJO FINAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33440047"
+	},
+	"item": [
+		{
+			"name": "HACKATHON FINAL",
+			"item": [
+				{
+					"name": "API LOGIN DE USUARIOS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"pablo123@gmail.com\",\r\n  \"password\": \"pabloabc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API CREACIÓN DE PRODUCTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://laptronic.pe/catalogo/wp-content/uploads/iPhone-13-128GB.png",
+							"protocol": "https",
+							"host": [
+								"laptronic",
+								"pe"
+							],
+							"path": [
+								"catalogo",
+								"wp-content",
+								"uploads",
+								"iPhone-13-128GB.png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER PRODUCTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hackathonfinal.onrender.com/api/home/products",
+							"protocol": "https",
+							"host": [
+								"hackathonfinal",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"home",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FILTRADO DE PRODUCTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hackathonfinal.onrender.com/api/home/products?category=electronics&priceRange=100-1000&search=phone",
+							"protocol": "https",
+							"host": [
+								"hackathonfinal",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"home",
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "electronics"
+								},
+								{
+									"key": "priceRange",
+									"value": "100-1000"
+								},
+								{
+									"key": "search",
+									"value": "phone"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGREGAR PRODUCTOS AL CARRITO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVhOWNkYjY4YTQ5MTc1NmMyZjM5OCIsImlhdCI6MTcxNjUxNDQ4MywiZXhwIjoxNzE5MTA2NDgzfQ.vVQL8JwwzHreFKvfwVn_Nf8IRA_z6QQrsAA8DeJVYaE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"664d555ed689f767353a48d5\",\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QUITAR PRODUCTOS DEL CARRITO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVhOWNkYjY4YTQ5MTc1NmMyZjM5OCIsImlhdCI6MTcxNjUxNDQ4MywiZXhwIjoxNzE5MTA2NDgzfQ.vVQL8JwwzHreFKvfwVn_Nf8IRA_z6QQrsAA8DeJVYaE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"664eadcfb68a491756c2f39d\",\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREACIÓN DE CUPON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVhNzg0YjY4YTQ5MTc1NmMyZjM5MyIsImlhdCI6MTcxNjY0OTA0OSwiZXhwIjoxNzE5MjQxMDQ5fQ.1RrDvEdgqLq-JBr8eeVnL0jbIMar7sHqI2P7osKuf4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"00000002\",\r\n  \"discount\": 50,\r\n  \"expirationDate\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hackathonfinal.onrender.com/api/coupons",
+							"protocol": "https",
+							"host": [
+								"hackathonfinal",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"coupons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "APLICAR CUPON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVhNzg0YjY4YTQ5MTc1NmMyZjM5MyIsImlhdCI6MTcxNjY0OTA0OSwiZXhwIjoxNzE5MjQxMDQ5fQ.1RrDvEdgqLq-JBr8eeVnL0jbIMar7sHqI2P7osKuf4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"COUPON_CODE_HERE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hackathonfinal.onrender.com/api/cart/apply-coupon",
+							"protocol": "https",
+							"host": [
+								"hackathonfinal",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"cart",
+								"apply-coupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR CUPON",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"00000001\",\r\n  \"discount\": 25,\r\n  \"expirationDate\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hackathonfinal.onrender.com/api/coupons/{id}",
+							"protocol": "https",
+							"host": [
+								"hackathonfinal",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"coupons",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR CUPON",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://hackathonfinal.onrender.com/api/coupons/{id}",
+							"protocol": "https",
+							"host": [
+								"hackathonfinal",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"coupons",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CULQI API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 1000,\r\n  \"currency_code\": \"PEN\",\r\n  \"email\": \"pablo123@gmail.com\",\r\n  \"source_id\": \"tkn_test_1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.culqi.com/v2/charges",
+							"protocol": "https",
+							"host": [
+								"api",
+								"culqi",
+								"com"
+							],
+							"path": [
+								"v2",
+								"charges"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
