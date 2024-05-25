@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const couponController = require('../controllers/couponController');
-const { protect, admin } = require('../middlewares/authMiddleware');
+const { protect, admin } = require('../middleware/authMiddleware');
 
 router.post('/coupons', protect, admin, couponController.createCoupon); // Ruta protegida
 router.get('/coupons', protect, admin, couponController.getCoupons);
